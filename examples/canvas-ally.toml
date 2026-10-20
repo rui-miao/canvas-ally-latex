@@ -1,0 +1,15 @@
+# All settings are optional. Command-line options override this file.
+language = "en-US"
+profile = "auto"
+beamer_mode = "ltx-talk"
+table_headers = "first-row"
+
+[images]
+# Paths are written exactly as they appear in \includegraphics.
+"figures/allocation.png" = "Flowchart showing participants assigned to treatment A or B."
+
+# Decorative graphics are tagged as artifacts instead of receiving fake text.
+"figures/rule.png" = { decorative = true }
+
+# A file-specific key disambiguates two uses of the same image path.
+"sections/results.tex::figures/model.png" = "Observed and fitted values by treatment group."

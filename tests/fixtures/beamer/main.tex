@@ -1,0 +1,45 @@
+\documentclass[aspectratio=169,11pt,handout]{beamer}
+
+\title{Accessible Trial Designs}
+\author{Course Staff}
+\institute{School of Public Health}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Response-adaptive randomization}
+  \begin{block}{Key idea}
+    The next allocation probability can depend on earlier outcomes.
+  \end{block}
+  \[
+    \Pr(T_{n+1}=1 \mid \mathcal F_n) = p_n.
+  \]
+\end{frame}
+
+\begin{frame}{Blocks and columns}
+  \begin{columns}[T,onlytextwidth]
+    \begin{column}[T]{0.48\textwidth}
+      \begin{alertblock}<1->{Caution}
+        Adaptive probabilities must remain bounded away from zero.
+      \end{alertblock}
+    \end{column}
+    \begin{column}[b]{0.48\textwidth}
+      \begin{exampleblock}{Interpretation}
+        Balance ethics with inferential precision.
+      \end{exampleblock}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Literal input}
+  \begin{verbatim}
+  # This command must not be transformed:
+  \includegraphics{not-a-real-figure.pdf}
+  \end{verbatim}
+\end{frame}
+
+\end{document}

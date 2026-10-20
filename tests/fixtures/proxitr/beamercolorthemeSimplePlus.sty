@@ -1,0 +1,21 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{beamercolorthemeSimplePlus}[2026/09/15 ProxITR regression theme]
+
+\definecolor{DarkBlue}{rgb}{0.05,0.15,0.35}
+\definecolor{InvisibleGreen}{rgb}{0.92,0.97,0.92}
+\definecolor{MediumGreen}{rgb}{0.37,0.70,0.66}
+
+% The real ProxITR color theme has load-bearing, non-Beamer setup like this.
+\RequirePackage{tcolorbox}
+\tcbset{
+  coltext=black,
+  coltitle=white,
+  green/.style={
+    coltitle=white,
+    colframe=MediumGreen,
+    colback=InvisibleGreen
+  }
+}
+
+% Beamer-only declarations are harmless because the generated shim owns them.
+\setbeamercolor{structure}{fg=DarkBlue}

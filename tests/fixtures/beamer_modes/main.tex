@@ -1,0 +1,70 @@
+\documentclass[aspectratio=169,14pt]{beamer}
+
+\title{Beamer Migration Cases}
+\author{Course Staff}
+\beamerdefaultoverlayspecification{<+->}
+\AtBeginSection[]{
+  \begin{frame}
+    \sectionpage
+  \end{frame}
+}
+\logo{\includegraphics{missing-visual-logo.pdf}}
+
+\begin{document}
+
+\section<article>{Excluded heading}
+\section<presentation>*{Visible section}
+
+\begin{frame}<beamer:1->[<presentation:+->][plain,label=mode-target]{Visible projector frame}
+  \begin{itemize}
+    \item First visible idea
+    \item The formula is $p + (1-p) = 1$.
+  \end{itemize}
+  % allytex: alt=Example placeholder image used to test overlay graphics.
+  \includegraphics<1->[width=1cm]{example-image-a}
+  \structure{Structured emphasis}
+  \onslide+<1->{Visible semantics}
+  \hyperlink<1->{mode-target}{\beamergotobutton{Go to this frame}}
+  \frame{A normal boxed phrase}
+  \only<article>{This branch and $z^2$ do not enter the slide PDF.}
+\end{frame}
+
+\mode<presentation>
+\begin{frame}{Command-form columns}
+  \begin{columns}
+    \column[t]{0.45\textwidth}
+      Left column
+    \column[b]{0.45\textwidth}
+      Right column
+  \end{columns}
+\end{frame}
+\mode<all>
+
+\begin{frame}{Nested command-form columns}
+  \begin{columns}
+    \column{0.48\textwidth}
+      Outer left
+      \begin{columns}[onlytextwidth]
+        \column{0.45\linewidth}Inner left
+        \column{0.45\linewidth}Inner right
+      \end{columns}
+    \column{0.48\textwidth}
+      Outer right
+  \end{columns}
+\end{frame}
+
+\begin{frame}[fragile]{Semi-verbatim code}
+  \begin{semiverbatim}
+  response <- rbinom(10, 1, 0.5)
+  path <- "C:\\Users\\student"
+  mean(response)
+  \end{semiverbatim}
+\end{frame}
+
+\begin{frame}<article>{Excluded frame}
+  \begin{tikzpicture}
+    \draw (0,0) -- (1,1);
+  \end{tikzpicture}
+\end{frame}
+
+\end{document}

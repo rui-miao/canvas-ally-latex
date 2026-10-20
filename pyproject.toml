@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "canvas-ally-latex"
+version = "0.1.0"
+description = "Prepare and audit LaTeX PDFs for Canvas/Ally accessibility"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Rui Miao"}]
+keywords = ["latex", "accessibility", "canvas", "ally", "pdf-ua"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Topic :: Text Processing :: Markup :: LaTeX",
+]
+dependencies = []
+
+[project.scripts]
+canvas-ally-latex = "canvas_ally_latex.cli:main"
+ally-latex-cleaner = "canvas_ally_latex.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
